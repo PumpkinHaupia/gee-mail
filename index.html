@@ -6,10 +6,16 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        function accessGeemail (mail1, mail2, mail3, mail4){
-return windows.geemails;
+		
+				function accessGeemail (mail){
+					for(i=0; i<accessGeemail.length; i++){
+						console.log(mail[subject]);
+						console.log(mail[sender]);
+						console.log(mail[body]);
+					}
+return window.geemails;
 				}
-				showGeemail = accessGeemail(date, subject, sender, body);
+				showGeemail = accessGeemail(subject, sender, body);
 				console.log(showGeemail);
       };
     </script>
