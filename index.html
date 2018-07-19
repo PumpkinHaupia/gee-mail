@@ -7,17 +7,28 @@
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 		
-				function accessGeemail (mail){
-					for(i=0; i<accessGeemail.length; i++){
-						console.log(mail[subject]);
-						console.log(mail[sender]);
-						console.log(mail[body]);
+				var mailSubject = [];
+					var mailSender = [];
+					var mailBody = [];
+				function accessGeemail (){
+					for(i=0; i<mail.length; i++){
+						mailSubject.push(subject);
+						mailSender.push(sender);
+						mailBody.push(body);
+						console.log(mailSubject);
+						console.log(mailSender);
+						console.log(mailBody);
 					}
-return window.geemails;
 				}
-				showGeemail = accessGeemail(subject, sender, body);
-				console.log(showGeemail);
-      };
+				console.log(accessGeemail(mailSubject));
+				console.log(accessGeemail(mailSender));
+				console.log(accessGeemail(mailBody));
+				
+// return window.geemails;
+// 				}
+// 				showGeemail = accessGeemail(subject, sender, body);
+// 				console.log(showGeemail);
+//       };
     </script>
 	</head>
 	<body>
