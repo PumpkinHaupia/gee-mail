@@ -1,3 +1,15 @@
 body{
     background-color: khaki
 }
+
+h1{
+    font-family: 'IM Fell DW Pica', serif;
+    text-align: center;
+    font-size: 50px;
+    color: firebrick;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    background-color: bisque;
+    border-radius: 33px;
+}
