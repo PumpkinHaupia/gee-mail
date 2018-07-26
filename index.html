@@ -7,22 +7,18 @@
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 		
-				var mailSubject = [];
-					var mailSender = [];
-					var mailBody = [];
-				function accessGeemail (){
-					for(i=0; i<mail.length; i++){
-						mailSubject.push(subject);
-						mailSender.push(sender);
-						mailBody.push(body);
-						console.log(mailSubject);
-						console.log(mailSender);
-						console.log(mailBody);
-					}
+				var makeGeemailAppear = {
+					Subject: [],
+					Sender: [],
+					Body: [],
 				}
-				console.log(accessGeemail(mailSubject));
-				console.log(accessGeemail(mailSender));
-				console.log(accessGeemail(mailBody));
+				function accessGeemail(){
+						makeGeemailAppear.Subject = mailSubject.push(subject),
+						makeGeemailAppear.Sender = mailSender.push(sender),
+						makeGeemailAppear.Body = mailBody.push(body)
+				}
+				console.log(accessGeemail(makeGeemailAppear));
+				
 				
 // return window.geemails;
 // 				}
