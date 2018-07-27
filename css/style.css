@@ -7,9 +7,25 @@ h1{
     text-align: center;
     font-size: 50px;
     color: firebrick;
-    border: 1px solid black;
+    border: 1px solid cornflowerblue;
     margin: 10px;
     padding: 10px;
     background-color: bisque;
-    border-radius: 33px;
+    border-radius: 16px;
+    width: 50%;
+}
+img{
+    align: inline-right;
+    height: 100px;
+    width: 25%;
+    border-radius: 30px;
+    display: block;
+    margin: 0 auto
+}
+table, th, td{
+border: 1 px solid blue;
+column-count: 3;
+column-gap: 5 px;
+column-rule: solid 1 px blue;
+column-width: 100 px;
 }
