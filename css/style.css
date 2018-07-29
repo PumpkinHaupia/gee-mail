@@ -15,7 +15,8 @@ h1{
     width: 50%;
 }
 img{
-    align: inline-right;
+    row: after;
+    float: right;
     height: 100px;
     width: 25%;
     border-radius: 30px;

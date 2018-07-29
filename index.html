@@ -5,21 +5,26 @@
     <script>
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
+				// We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
+				
+				
 				var makeGeemailAppear = {
 					Subject: [],
 					Sender: [],
 					Body: [],
 				}
 				function accessGeemail(){
+					var senderTable = document.createElement(table);
+					var geeTable = document.getElementById(main);
 						makeGeemailAppear.Subject = subject,
 						makeGeemailAppear.Sender = sender,
 						makeGeemailAppear.Body = body
 				}
-				var readGeemail = accessGeemail(makeGeemailAppear);
-				console.log(readGeemail);
+				console.log(accessGeemail(loadGeeMails));
+				// var readGeemail = accessGeemail(makeGeemailAppear);
+				// console.log(readGeemail);
 				
-				var subject = document.getElementsByName(subject);
+				// var subject = document.getElementsByName(subject);
 				
 // return window.geemails;
 // 				}
@@ -35,20 +40,10 @@
 				</div>
 			</header>
 			<img src="email.jpg" alt="Logo">
-			<table style = "width:100%">
-			<tr>
-				<th>Sender</th>
-				<th>Subject</th>
-				<th>Message</th>
-			</tr>
-			<tr>
-				<td>var sender[0]</td>
-				<td>subject[0]</td>
-				<td>body[0]</td>
-				</tr>
-				</table>
-		<div class="container" id="main">
-			Build Me!
-		</div>
+			<div id='main'>
+				<div class="column">
+					</div>
+					</div>
+				</div>
 	</body>
 </html>
