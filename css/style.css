@@ -1,32 +1,25 @@
 body{
-    background-color: khaki
+    background-color: cornflowerblue
 }
 
 h1{
-    font-family: 'IM Fell DW Pica', serif;
+    font-family: 'Modern Antiqua', cursive;
     text-align: center;
-    font-size: 50px;
-    color: firebrick;
-    border: 1px solid cornflowerblue;
+    font-size: 40px;
+    color: yellow;
+    border: 1px solid whitesmoke;
     margin: 10px;
     padding: 10px;
-    background-color: bisque;
+    background-color: blue;
     border-radius: 16px;
-    width: 50%;
+    width: 100%;
+    
 }
 img{
-    row: after;
-    float: right;
-    height: 100px;
-    width: 25%;
+    
+    height: 125px;
+    width: 125px;
     border-radius: 30px;
     display: block;
     margin: 0 auto
-}
-table, th, td{
-border: 1 px solid blue;
-column-count: 3;
-column-gap: 5 px;
-column-rule: solid 1 px blue;
-column-width: 100 px;
 }
