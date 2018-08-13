@@ -32,6 +32,7 @@
 			bodyBox.className = "bodyLine";
 			bodyBox.innerHTML = geemails[i].body;
 			mainBox.appendChild(bodyBox);
+		}
 
 			var getSubject = document.getElementsByClassName("subjectLine");
 			for(var j = 0; j < getSubject.length; j++){
@@ -46,15 +47,14 @@
 					bodyElem.style.display = "none";
 				}
 			}
-			}
 			var getMailCount = geemails.length;
 			
 			var count = document.createElement("div");
 			count.id = "count";
-			count.innerHTML = "Inbox: " + getMailCount;
 			mainHeader.appendChild(count);
 
 			var addMail = getNewMessage();
+			var randomMail = addMail[Math.floor(Math.random()*getNewMessage.length)];
 		}
 
 		function newMessage (){
@@ -63,20 +63,31 @@
 			addMainBox.className = "addMainPage";
 			main.appendChild(addMainBox);
 
+			//var randomMainBox = addMainBox[Math.floor(Math.random()*addMainBox.length)];
+			
 			var addSenderBox = document.createElement("div");
 			addSenderBox.className = "senderName";
 			addSenderBox.innerHTML = "From: " + addMail.sender;
 			addMainBox.appendChild(addSenderBox);
+
+			//var randomSender = addSenderBox[Math.floor(Math.random()*addSenderBox.length)];
 
 			var addDateBox = document.createElement("div");
 			addDateBox.classname = "dateLine";
 			addDateBox.innerHTML = "Date: " + addMail.date;
 			addMainBox.appendChild(addDateBox);
 
+			//var randomDate = addDateBox[Math.floor(Math.random()*addDateBox.length)];
+
 			var addSubjectBox = document.createElement("div");
 			addSubjectBox.classname = "addSubjectLine";
 			addSubjectBox.innerHTML = "Subject: " + addMail.subject;
 			addMainBox.appendChild(addSubjectBox);
+
+			var randomEmails = [addMainBox, addSenderBox, addDateBox, addSubjectBox];
+			var randomRandoms = randomEmails[Math.floor(Math.random()*randomEmails.length)];
+
+			//var randomSubject = addSubjectBox[Math.floor(Math.random()*addSubjectBox.length)];
 
 			var addBodyBox = document.createElement("p");
 			addBodyBox.classname = "addBodyLine";
@@ -88,7 +99,7 @@
 			document.getElementById("count").innerHTML = "Inbox: " + "(" + getMailCount + ")";
 			
 			var getNewSubject = document.getElementsByClassName("addSubjectLine");
-			for(j=0; j<getNewSubject.length; j++){
+			for(var j=0; j<getNewSubject.length; j++){
 				console.log(getNewSubject[j]);
 				getNewSubject[j].addEventListener("click", hideNewElem);
 			}
@@ -101,7 +112,7 @@
 				}
 			}
 		}
-setInterval(newMessage,5000);
+setInterval(newMessage, 5000);
 
       };
 	</script>
