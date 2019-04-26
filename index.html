@@ -7,105 +7,110 @@
         // // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
 				// // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 
-		for (var i = 0; i < geemails.length; i++){
+for(var i = 0; i < geemails.length; i++){
 
-			var mainBox = document.createElement("div");
-			mainBox.className = "mainPage";
-			document.getElementById("main").appendChild(mainBox);
+var mainBox = document.createElement("div");
+mainBox.className = "mainPage";
+document.getElementById("main").appendChild(mainBox);
 
-			var senderBox = document.createElement("div");
-			senderBox.className = "senderName";
-			senderBox.innerHTML = "From: " + geemails[i].sender;
-			mainBox.appendChild(senderBox);
+var senderBox = document.createElement("div");
+senderBox.className = "senderName";
+senderBox.innerHTML = "From: " + geemails[i].sender;
+mainBox.appendChild(senderBox);
 
-			var dateBox = document.createElement("div");
-			dateBox.className = "dateLine";
-			dateBox.innerHTML = "Date: " + geemails[i].date;
-			mainBox.appendChild(dateBox);
+var dateBox = document.createElement("div");
+dateBox.className = "dateLine";
+dateBox.innerHTML = "Date: " + geemails[i].date;
+mainBox.appendChild(dateBox);
 
-			var subjectBox = document.createElement("div");
-			subjectBox.className = "subjectLine";
-			subjectBox.innerHTML = "Subject: " + geemails[i].subject;
-			mainBox.appendChild(subjectBox);
+var subjectBox = document.createElement("div");
+subjectBox.className = "subjectLine";
+subjectBox.innerHTML = "Subject: " + geemails[i].subject;
+mainBox.appendChild(subjectBox);
 
-			var bodyBox = document.createElement("p");
-			bodyBox.className = "bodyLine";
-			bodyBox.innerHTML = geemails[i].body;
-			mainBox.appendChild(bodyBox);
-			
+var bodyBox = document.createElement("p");
+bodyBox.className = "bodyLine";
+bodyBox.innerHTML = geemails[i].body;
+subjectBox.appendChild(bodyBox);
+
+}
+
+var getSubject = document.getElementsByClassName("subjectLine");
+for(var j = 0; j < getSubject.length; j++){
+console.log(getSubject[j]);
+getSubject[j].addEventListener("click", hideElem);
+
+}
+
+function hideElem(){
+
+	var bodyElem = this.querySelectorAll(".bodyLine")[0];
+		if(bodyElem.style.display === "none"){
+			bodyElem.style.display = "block";
+		}else{
+		bodyElem.style.display = "none";
 		}
+	}
 
-			var getSubject = document.getElementsByClassName("subjectLine");
-			for(var j = 0; j < getSubject.length; j++){
-				console.log(getSubject[j]);
-				getSubject[j].addEventListener("click", hideElem);
+var getMailCount = geemails.length;
 
-			function hideElem(){
-				var bodyElem = this.querySelectorAll(".bodyLine")[0];
-				if(bodyElem.style.display === "none"){
-					bodyElem.style.display = "block";
-				}else{
-					bodyElem.style.display = "none";
-				}
-			}
-			var getMailCount = geemails.length;
-			
-			var count = document.createElement("div");
-			count.id = "count";
-			mainHeader.appendChild(count);
+var count = document.createElement("div");
+count.id = "count";
+count.innerHTML = "Inbox: " + getMailCount;
+mainHeader.appendChild(count);
 
-			var addMail = getNewMessage();
-			var randomMail = ['senderName', 'dateLine', 'subjectLine'];
-			var randomRandoms = randomMail[Math.floor(Math.random()*getNewMessage.length)];
+var addMail = getNewMessage();
+//console.log(addMail);
+
+function newMessage() {
+var addMainBox = document.createElement("div");
+addMainBox.className = "addMainPage";
+main.appendChild(addMainBox);
+
+var addSenderBox = document.createElement("div");
+addSenderBox.className = "senderName";
+addSenderBox.innerHTML = "From: " + addMail.sender;
+addMainBox.appendChild(addSenderBox);
+
+var addDateBox = document.createElement("div");
+addDateBox.className = "dateLine";
+addDateBox.innerHTML = "Date: " + addMail.date;
+addMainBox.appendChild(addDateBox);
+
+var addSubjectBox = document.createElement("div");
+addSubjectBox.className = "addSubjectLine";
+addSubjectBox.innerHTML = "Subject: " + addMail.subject;
+addMainBox.appendChild(addSubjectBox);
+
+var addBodyBox = document.createElement("p");
+addBodyBox.className = "addBodyLine";
+addBodyBox.innerHTML = addMail.body;
+addBodyBox.style.display = "none";
+addSubjectBox.appendChild(addBodyBox);
+
+getMailCount++;
+
+document.getElementById("count").innerHTML = "Inbox: " + "(" + getMailCount + ")";
+var getNewSubject = document.getElementsByClassName("addSubjectLine");
+for(var j = 0; j < getNewSubject.length; j++){
+console.log(getNewSubject[j]);
+getNewSubject[j].addEventListener("click", hideNewElem);
+}
+
+function hideNewElem(){
+		var newBodyElem = this.querySelectorAll(".addBodyLine")[0];
+		if(newBodyElem.style.display === "none"){
+			newBodyElem.style.display = "block";
+		}else{
+		newBodyElem.style.display = "none";
 		}
+	}
+}
 
-		function newMessage (){
-
-			var addMainBox = document.createElement("div");
-			addMainBox.className = "addMainPage";
-			main.appendChild(addMainBox);
-			
-			var addSenderBox = document.createElement("div");
-			addSenderBox.className = "senderName";
-			addSenderBox.innerHTML = "From: " + addMail.sender;
-			addMainBox.appendChild(addSenderBox);
-
-			var addDateBox = document.createElement("div");
-			addDateBox.classname = "dateLine";
-			addDateBox.innerHTML = "Date: " + addMail.date;
-			addMainBox.appendChild(addDateBox);
-
-			var addSubjectBox = document.createElement("div");
-			addSubjectBox.classname = "addSubjectLine";
-			addSubjectBox.innerHTML = "Subject: " + addMail.subject;
-			addMainBox.appendChild(addSubjectBox);
-
-			var addBodyBox = document.createElement("p");
-			addBodyBox.classname = "addBodyLine";
-			addBodyBox.innerHTML = addMail.body;
-			addBodyBox.style.display = "none";
-			addSubjectBox.appendChild(addBodyBox);
-
-			getMailCount++;
-			document.getElementById("count").innerHTML = "Inbox: " + "(" + getMailCount + ")";
-			
-			var getNewSubject = document.getElementsByClassName("addSubjectLine");
-			console.log(getNewSubject[j]);
-			for(var j=0; j<getNewSubject.length; j++){
-				getNewSubject[j].addEventListener("click", hideNewElem);
-			}
-			function hideNewElem(){
-				var newBodyElem = this.querySelectorAll(".addBodyLine")[0];
-				if(newBodyElem.style.display === "none"){
-					newBodyElem.style.display = "block";
-				}else{
-					newBodyElem.style.display = "none";
-				}
-			}
-		}
 setInterval(newMessage, 5000);
 
-      };
+};
+
 	</script>
 	<link href="https://fonts.googleapis.com/css?family=Modern+Antiqua" rel="stylesheet">
 	</head>
